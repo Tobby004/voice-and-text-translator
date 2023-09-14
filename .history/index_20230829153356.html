@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Recording App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Voice Recorder & Translator</h1>
+        <button id="startRecord">Start Recording</button>
+        <button id="stopRecord" disabled>Stop Recording</button>
+        <button id="playAudio" disabled>Play Last Recording</button>
+
+        <h2>Translate Recording</h2>
+        <label for="languageSelect">Select Language:</label>
+        <select id="languageSelect">
+            <!-- Languages will be populated dynamically -->
+        </select>
+        <button id="translate">Translate</button>
+        <div id="translatedText"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

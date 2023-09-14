@@ -1,0 +1,76 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #c0c0c0;
+    cursor: not-allowed;
+}
+
+#recordingStatus {
+    text-align: center;
+    margin-top: 15px;
+}
+
+#audioPlayer {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.translation-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#languageSelect {
+    height: 100px;
+}
+
+#translatedTextContainer {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}

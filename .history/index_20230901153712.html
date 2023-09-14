@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice and Text Translator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Voice and Text Translator</h1>
+
+        <div class="voice-controls">
+            <button id="startRecord">Start Recording</button>
+            <button id="stopRecord" disabled>Stop Recording</button>
+            <button id="playAudio" disabled>Play</button>
+            <a id="downloadAudio" href="#" download="recording.wav" style="display: none;">Download Recording</a>
+            <div id="recordingStatus">Not Recording...</div>
+            <audio id="audioPlayer" controls style="display:none;"></audio>
+        </div>
+
+        <div class="text-controls">
+            <textarea id="inputText" placeholder="Enter text to translate..."></textarea>
+        </div>
+
+        <div class="translation-controls">
+            <select id="languageSelect" multiple></select>
+            <button id="translate">Translate</button>
+        </div>
+        <div id="translatedTextContainer">
+            <!-- Translated texts will be appended here -->
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="translator.js"></script>
+</body>
+</html>

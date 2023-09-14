@@ -1,0 +1,42 @@
+{
+    "sourceFile": "server.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1693473018339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1693474001672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const express = require('express');\n const fetch = require('node-fetch');\n const app = express();\n-const PORT = 5000;\n+const PORT = 8080;  // Updated port number\n \n app.use(express.json());\n \n app.post('/translate', async (req, res) => {\n"
+                },
+                {
+                    "date": 1693477050145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const express = require('express');\n-const fetch = require('node-fetch');\n+const fetch = require('node-fetch');  // Should work with node-fetch@2\n const app = express();\n-const PORT = 8080;  // Updated port number\n+const PORT = 8080;\n \n app.use(express.json());\n \n app.post('/translate', async (req, res) => {\n"
+                },
+                {
+                    "date": 1693477422920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n const express = require('express');\n-const fetch = require('node-fetch');  // Should work with node-fetch@2\n+const fetch = require('node-fetch');\n+const cors = require('cors');  // Add this line\n const app = express();\n const PORT = 8080;\n \n+app.use(cors());  // Add this line to enable CORS for all routes\n app.use(express.json());\n \n app.post('/translate', async (req, res) => {\n     const DEEPL_API_ENDPOINT = \"https://api-free.deepl.com/v2/translate\";\n"
+                },
+                {
+                    "date": 1693477785143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,15 @@\n const cors = require('cors');  // Add this line\n const app = express();\n const PORT = 8080;\n \n+app.use((req, res, next) => {\n+    res.header(\"Access-Control-Allow-Origin\", \"*\");  // Allow all origins\n+    res.header(\"Access-Control-Allow-Headers\", \"Origin, X-Requested-With, Content-Type, Accept\");\n+    res.header(\"Access-Control-Allow-Methods\", \"GET, POST, PUT, DELETE, OPTIONS\");\n+    next();\n+});\n+\n app.use(cors());  // Add this line to enable CORS for all routes\n app.use(express.json());\n \n app.post('/translate', async (req, res) => {\n"
+                },
+                {
+                    "date": 1693478033354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n const express = require('express');\n const fetch = require('node-fetch');\n-const cors = require('cors');  // Add this line\n+const cors = require('cors');\n const app = express();\n const PORT = 8080;\n \n app.use((req, res, next) => {\n@@ -10,9 +10,9 @@\n     res.header(\"Access-Control-Allow-Methods\", \"GET, POST, PUT, DELETE, OPTIONS\");\n     next();\n });\n \n-app.use(cors());  // Add this line to enable CORS for all routes\n+app.use(cors());  // Enable CORS for all routes\n app.use(express.json());\n \n app.post('/translate', async (req, res) => {\n     const DEEPL_API_ENDPOINT = \"https://api-free.deepl.com/v2/translate\";\n@@ -33,4 +33,8 @@\n \n app.listen(PORT, () => {\n     console.log(`Server is running on http://localhost:${PORT}`);\n });\n+\n+app.options('*', (req, res) => {\n+    res.sendStatus(200);\n+});\n"
+                },
+                {
+                    "date": 1693478567160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,12 @@\n             body: JSON.stringify(req.body)\n         });\n         const data = await response.json();\n         res.json(data);\n+        \n+\n     } catch (error) {\n+        console.error(error);\n         res.status(500).json({ error: \"Failed to fetch from DeepL\" });\n     }\n });\n \n"
+                }
+            ],
+            "date": 1693473018339,
+            "name": "Commit-0",
+            "content": "const express = require('express');\nconst fetch = require('node-fetch');\nconst app = express();\nconst PORT = 5000;\n\napp.use(express.json());\n\napp.post('/translate', async (req, res) => {\n    const DEEPL_API_ENDPOINT = \"https://api-free.deepl.com/v2/translate\";\n    try {\n        const response = await fetch(DEEPL_API_ENDPOINT, {\n            method: 'POST',\n            headers: {\n                'Content-Type': 'application/json'\n            },\n            body: JSON.stringify(req.body)\n        });\n        const data = await response.json();\n        res.json(data);\n    } catch (error) {\n        res.status(500).json({ error: \"Failed to fetch from DeepL\" });\n    }\n});\n\napp.listen(PORT, () => {\n    console.log(`Server is running on http://localhost:${PORT}`);\n});\n"
+        }
+    ]
+}

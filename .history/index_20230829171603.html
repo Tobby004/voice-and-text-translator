@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Voice Translator</h1>
+        <button id="startRecord">Start Recording</button>
+        <button id="stopRecord" disabled>Stop Recording</button>
+        <button id="playAudio" disabled>Play Last Recording</button>
+        <select id="languageSelect">
+            <!-- Populated by JS -->
+        </select>
+        <button id="translate">Translate</button>
+        <div id="recordingStatus">Not Recording...</div>
+        <audio id="audioPlayer" controls style="display:none;"></audio>
+        <div id="translatedText"></div>
+    </div>
+    <script src="app.js"></script>
+    <script src="translator.js"></script>
+</body>
+</html>

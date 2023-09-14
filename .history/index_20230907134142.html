@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice & Text Translator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Voice Recording Section -->
+        <div class="section">
+            <h2>Voice Translator</h2>
+            <button id="startRecord">Start Recording</button>
+            <button id="stopRecord">Stop Recording</button>
+            <button id="playAudio">Play Last Recording</button>
+            <p id="recordingStatus">Status: Not Recording</p>
+            <select id="voiceLanguageSelect">
+                <!-- Languages will be populated via JavaScript -->
+            </select>
+            <button id="translate">Translate Recording</button>
+        </div>
+
+        <!-- Text Entry Section -->
+        <div class="section">
+            <h2>Text Translator</h2>
+            <textarea id="textToTranslate" placeholder="Enter text to translate..."></textarea>
+            <select id="textLanguageSelect">
+                <!-- Languages will be populated via JavaScript -->
+            </select>
+            <button id="textTranslate">Translate Text</button>
+        </div>
+
+        <p>Translated Text:</p>
+        <div id="translatedTextContainer"></div>
+
+        <audio id="audioPlayer" controls></audio>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

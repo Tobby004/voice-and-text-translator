@@ -1,0 +1,74 @@
+body, html {
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    margin: 0;
+    background-color: #f3f4f6;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    border-radius: 30px;
+    border: solid blue 0.5px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.controls, .translation-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #2980b9;
+}
+
+a {
+    padding: 10px 15px;
+    background-color: #2ecc71;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: #27ae60;
+    width: 200px;
+}
+
+#savedRecordings {
+    margin-top: 40px;
+}
+
+#savedRecordings h2 {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 10px;
+}
+
+#translatedTextContainer {
+    margin-top: 20px;
+}

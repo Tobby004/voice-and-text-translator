@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: solid 1px blue;
+}
+.title  {
+    text-align: center;
+    color: #007bff;
+}
+button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 1rem;
+    resize: vertical;
+}
+
+#translatedTextContainer {
+    margin-top: 1rem;
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+audio {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+p {
+    margin-top: 1rem;
+}
+
+#recordingStatus {
+    color: red;
+    font-weight: bold;
+}
+
+#languageSelect {
+    margin-top: 1rem;
+}
